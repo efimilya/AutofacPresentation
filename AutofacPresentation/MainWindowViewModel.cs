@@ -2,16 +2,24 @@
 {
     public class MainWindowViewModel
     {
-        private readonly HeaderViewModel _headerViewModel;
-
-        public MainWindowViewModel(IShowChildWindowCommand showChildWindowCommand, HeaderViewModel headerViewModel)
+        public MainWindowViewModel(IShowChildWindowCommand showChildWindowCommand, IHeaderViewModel headerViewModel)
         {
-            _headerViewModel = headerViewModel;
+            Header = headerViewModel;
             ShowChildWindowCommand = showChildWindowCommand;
         }
 
         public IShowChildWindowCommand ShowChildWindowCommand { get; }
 
-        public HeaderViewModel Header => _headerViewModel;
+        public IHeaderViewModel Header { get; }
+    }
+
+    public class SimpleHeaderViewModel : IHeaderViewModel
+    {
+        public string Text => "Простой заголовок";
+    }
+
+    public interface IHeaderViewModel
+    {
+        string Text { get; }
     }
 }

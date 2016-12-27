@@ -74,6 +74,7 @@
     </Compile>
     <Compile Include="HeaderViewModel.cs" />
     <Compile Include="GoodShowChildWindowCommand.cs" />
+    <Compile Include="HideSensitiveInfoFromHeader.cs" />
     <Compile Include="IShowChildWindowCommand.cs" />
     <Compile Include="SpeakerType.cs" />
     <Page Include="ChildWindowView.xaml">

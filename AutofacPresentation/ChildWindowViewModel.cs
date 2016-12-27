@@ -5,17 +5,16 @@
     public delegate ChildWindowViewModel BadChildWindowViewModelFactory(SpeakerType speakerType);
 
     public class ChildWindowViewModel
-    {
-        private readonly HeaderViewModel _headerViewModel;
+    {        
 
-        public ChildWindowViewModel(ISpeaker speaker, HeaderViewModel headerViewModel)
+        public ChildWindowViewModel(ISpeaker speaker, IHeaderViewModel headerViewModel)
         {
-            _headerViewModel = headerViewModel;
+            Header = headerViewModel;
             Text = speaker.Say();
         }
 
         public string Text { get; }
 
-        public HeaderViewModel Header => _headerViewModel;
+        public IHeaderViewModel Header { get; }
     }
 }
