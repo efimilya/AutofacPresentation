@@ -64,12 +64,23 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="BadCompositionRoot.cs" />
+    <Compile Include="BadShowChildWindowCommand.cs" />
     <Compile Include="ChildWindowView.xaml.cs">
       <DependentUpon>ChildWindowView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="ShowChildWindowCommand.cs" />
+    <Compile Include="HeaderView.xaml.cs">
+      <DependentUpon>HeaderView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="HeaderViewModel.cs" />
+    <Compile Include="GoodShowChildWindowCommand.cs" />
+    <Compile Include="IShowChildWindowCommand.cs" />
     <Compile Include="SpeakerType.cs" />
     <Page Include="ChildWindowView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="HeaderView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -83,7 +94,7 @@
     </Compile>
     <Compile Include="BadSpeaker.cs" />
     <Compile Include="ChildWindowViewModel.cs" />
-    <Compile Include="CompositionRoot.cs" />
+    <Compile Include="GoodCompositionRoot.cs" />
     <Compile Include="GoodSpeaker.cs" />
     <Compile Include="IoCExtensions.cs" />
     <Compile Include="ISpeaker.cs" />

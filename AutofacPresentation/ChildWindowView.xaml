@@ -7,6 +7,7 @@
         mc:Ignorable="d"
         Title="ChildWindowView" Height="300" Width="300" d:DataContext="{d:DesignInstance autofacPresentation:ChildWindowViewModel}">
     <Grid>
+        <autofacPresentation:HeaderView DataContext="{Binding Path=Header}" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="10"/>
         <TextBlock Text="{Binding Path=Text}" HorizontalAlignment="Center" VerticalAlignment="Center" />
     </Grid>
 </Window>
