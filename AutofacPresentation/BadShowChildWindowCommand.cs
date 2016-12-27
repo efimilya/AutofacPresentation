@@ -19,22 +19,11 @@ namespace AutofacPresentation
 
         public void Execute(object parameter)
         {
-            new ChildWindowView { DataContext = _childWindowViewModelFactory(GetSpeaker((SpeakerType)parameter)) }.ShowDialog();
+            new ChildWindowView { DataContext = _childWindowViewModelFactory((SpeakerType)parameter) }.ShowDialog();
         }
 
         public event EventHandler CanExecuteChanged;
 
-        private static ISpeaker GetSpeaker(SpeakerType speakerType)
-        {
-            switch (speakerType)
-            {
-                case SpeakerType.Good:
-                    return new GoodSpeaker();
-                case SpeakerType.Bad:
-                    return new BadSpeaker();
-                default:
-                    throw new ArgumentOutOfRangeException(nameof(speakerType), speakerType, null);
-            }
-        }
+        
     }
 }

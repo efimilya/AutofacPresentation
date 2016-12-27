@@ -2,7 +2,7 @@
 {
     public delegate ChildWindowViewModel GoodChildWindowViewModelFactory(SpeakerType speakerType);
 
-    public delegate ChildWindowViewModel BadChildWindowViewModelFactory(ISpeaker speaker);
+    public delegate ChildWindowViewModel BadChildWindowViewModelFactory(SpeakerType speakerType);
 
     public class ChildWindowViewModel
     {
