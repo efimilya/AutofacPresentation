@@ -1,0 +1,12 @@
+﻿<Window x:Class="AutofacPresentation.ChildWindowView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:autofacPresentation="clr-namespace:AutofacPresentation"
+        mc:Ignorable="d"
+        Title="ChildWindowView" Height="300" Width="300" d:DataContext="{d:DesignInstance autofacPresentation:ChildWindowViewModel}">
+    <Grid>
+        <TextBlock Text="{Binding Path=Text}" HorizontalAlignment="Center" VerticalAlignment="Center" />
+    </Grid>
+</Window>
