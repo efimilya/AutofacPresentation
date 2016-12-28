@@ -1,8 +1,6 @@
 ﻿namespace AutofacPresentation
 {
-    public delegate ChildWindowViewModel GoodChildWindowViewModelFactory(SpeakerType speakerType);
-
-    public delegate ChildWindowViewModel BadChildWindowViewModelFactory(SpeakerType speakerType);
+    public delegate ChildWindowViewModel ChildWindowViewModelFactory(SpeakerType speakerType);    
 
     public class ChildWindowViewModel
     {        

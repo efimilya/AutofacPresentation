@@ -4,9 +4,9 @@ namespace AutofacPresentation
 {
     public class GoodShowChildWindowCommand : IShowChildWindowCommand
     {
-        private readonly GoodChildWindowViewModelFactory _childWindowViewModelFactory;
+        private readonly ChildWindowViewModelFactory _childWindowViewModelFactory;
 
-        public GoodShowChildWindowCommand(GoodChildWindowViewModelFactory childWindowViewModelFactory)
+        public GoodShowChildWindowCommand(ChildWindowViewModelFactory childWindowViewModelFactory)
         {
             _childWindowViewModelFactory = childWindowViewModelFactory;
         }

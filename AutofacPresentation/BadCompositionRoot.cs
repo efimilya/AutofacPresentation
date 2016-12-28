@@ -17,7 +17,7 @@ namespace AutofacPresentation
             builder.RegisterType<LeftSensitiveInfoInHeader>().AsSelf();
             builder.RegisterType<HeaderTextProvider>().AsSelf();            
 
-            builder.Register<BadChildWindowViewModelFactory>(
+            builder.Register<ChildWindowViewModelFactory>(
                 context =>
                 {
                     var parentContext = context.Persist();

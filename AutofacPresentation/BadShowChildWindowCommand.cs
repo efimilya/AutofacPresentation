@@ -1,13 +1,12 @@
 using System;
-using System.Windows.Input;
 
 namespace AutofacPresentation
 {
     public class BadShowChildWindowCommand : IShowChildWindowCommand
     {
-        private readonly BadChildWindowViewModelFactory _childWindowViewModelFactory;
+        private readonly ChildWindowViewModelFactory _childWindowViewModelFactory;
 
-        public BadShowChildWindowCommand(BadChildWindowViewModelFactory childWindowViewModelFactory)
+        public BadShowChildWindowCommand(ChildWindowViewModelFactory childWindowViewModelFactory)
         {
             _childWindowViewModelFactory = childWindowViewModelFactory;
         }
@@ -19,11 +18,9 @@ namespace AutofacPresentation
 
         public void Execute(object parameter)
         {
-            new ChildWindowView { DataContext = _childWindowViewModelFactory((SpeakerType)parameter) }.ShowDialog();
+            new ChildWindowView {DataContext = _childWindowViewModelFactory((SpeakerType) parameter)}.ShowDialog();
         }
 
         public event EventHandler CanExecuteChanged;
-
-        
     }
 }

@@ -11,9 +11,9 @@ namespace AutofacPresentation
             var builder = new ContainerBuilder();
             builder.RegisterType<MainWindowViewModel>().AsSelf();
             builder.RegisterType<GoodShowChildWindowCommand>().As<IShowChildWindowCommand>();
-            builder.RegisterType<HeaderViewModel>().AsSelf().InstancePerDependency();
+            builder.RegisterType<SimpleHeaderViewModel>().As<IHeaderViewModel>();
 
-            builder.Register<GoodChildWindowViewModelFactory>(context =>
+            builder.Register<ChildWindowViewModelFactory>(context =>
             {
                 var parentContext = context.Persist();
                 return speakerType => parentContext.RegisterWithChildScope(childBuilder => RegisterChildWindowViewModel(childBuilder, speakerType), childScope => childScope.Resolve<ChildWindowViewModel>());
@@ -22,15 +22,24 @@ namespace AutofacPresentation
             return builder.Build().Resolve<MainWindowViewModel>();
         }
 
-        private static readonly Dictionary<SpeakerType, Type> SpeakerTypeToTypeMap = new Dictionary<SpeakerType, Type>
+        private static readonly Dictionary<SpeakerType, Type> SpeakerRegistrationMap = new Dictionary<SpeakerType, Type>
         {
             {SpeakerType.Bad, typeof(BadSpeaker)}, {SpeakerType.Good, typeof(GoodSpeaker)}
         };
 
+        private static readonly Dictionary<SpeakerType, Type> FormatStrategyRegistrationMap = new Dictionary<SpeakerType, Type>
+        {
+            {SpeakerType.Bad, typeof(LeftSensitiveInfoInHeader)}, {SpeakerType.Good, typeof(HideSensitiveInfoFromHeader)}
+        };
+
         private static void RegisterChildWindowViewModel(this ContainerBuilder builder, SpeakerType speakerType)
         {
-            builder.RegisterType(SpeakerTypeToTypeMap[speakerType]).As<ISpeaker>();
+            builder.RegisterType(SpeakerRegistrationMap[speakerType]).As<ISpeaker>();
+            builder.RegisterType(FormatStrategyRegistrationMap[speakerType]).As<IFormatHeaderStrategy>();
             builder.RegisterType<ChildWindowViewModel>().AsSelf();
+            builder.RegisterType<HeaderTextFormatter>().AsSelf();
+            builder.RegisterType<HeaderViewModel>().As<IHeaderViewModel>();
+            builder.RegisterType<HeaderTextProvider>().AsSelf();
         }
     }
 }
