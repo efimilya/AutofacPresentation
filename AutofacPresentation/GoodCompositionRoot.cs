@@ -10,13 +10,15 @@ namespace AutofacPresentation
         {
             var builder = new ContainerBuilder();
             builder.RegisterType<MainWindowViewModel>().AsSelf();
-            builder.RegisterType<GoodShowChildWindowCommand>().As<IShowChildWindowCommand>();
+            builder.RegisterType<ShowChildWindowCommand>().AsSelf();
             builder.RegisterType<HeaderViewModel>().AsSelf().InstancePerDependency();
 
-            builder.Register<GoodChildWindowViewModelFactory>(context =>
+            builder.Register<ChildWindowViewModelFactory>(context =>
             {
                 var parentContext = context.Persist();
-                return speakerType => parentContext.RegisterWithChildScope(childBuilder => RegisterChildWindowViewModel(childBuilder, speakerType), childScope => childScope.Resolve<ChildWindowViewModel>());
+                return speakerType => parentContext.RegisterWithChildScope(
+                    childBuilder => RegisterChildWindowViewModel(childBuilder, speakerType),
+                    childScope => childScope.Resolve<ChildWindowViewModel>());
             });
 
             return builder.Build().Resolve<MainWindowViewModel>();
@@ -24,7 +26,7 @@ namespace AutofacPresentation
 
         private static readonly Dictionary<SpeakerType, Type> SpeakerTypeToTypeMap = new Dictionary<SpeakerType, Type>
         {
-            {SpeakerType.Bad, typeof(BadSpeaker)}, {SpeakerType.Good, typeof(GoodSpeaker)}
+            {SpeakerType.Bad, typeof(ByeSpeaker)}, {SpeakerType.Good, typeof(HelloSpeaker)}
         };
 
         private static void RegisterChildWindowViewModel(this ContainerBuilder builder, SpeakerType speakerType)

@@ -9,12 +9,12 @@ namespace AutofacPresentation
         {
             var builder = new ContainerBuilder();
             builder.RegisterType<MainWindowViewModel>().AsSelf();
-            builder.RegisterType<BadShowChildWindowCommand>().As<IShowChildWindowCommand>();
+            builder.RegisterType<ShowChildWindowCommand>().AsSelf();
             builder.RegisterType<HeaderViewModel>().AsSelf().InstancePerDependency();
-            builder.RegisterType<GoodSpeaker>().AsSelf();
-            builder.RegisterType<BadSpeaker>().AsSelf();
+            builder.RegisterType<HelloSpeaker>().AsSelf();
+            builder.RegisterType<ByeSpeaker>().AsSelf();
 
-            builder.Register<BadChildWindowViewModelFactory>(
+            builder.Register<ChildWindowViewModelFactory>(
                 context =>
                 {
                     var parentContext = context.Persist();
@@ -29,9 +29,9 @@ namespace AutofacPresentation
             switch (speakerType)
             {
                 case SpeakerType.Good:
-                    return context.Resolve<GoodSpeaker>();
+                    return context.Resolve<HelloSpeaker>();
                 case SpeakerType.Bad:
-                    return context.Resolve<BadSpeaker>();
+                    return context.Resolve<ByeSpeaker>();
                 default:
                     throw new ArgumentOutOfRangeException(nameof(speakerType), speakerType, null);
             }

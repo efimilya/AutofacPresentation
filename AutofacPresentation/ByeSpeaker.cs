@@ -1,10 +1,10 @@
 ﻿namespace AutofacPresentation
 {
-    public class BadSpeaker : ISpeaker
+    public class ByeSpeaker : ISpeaker
     {
         public string Say()
         {
-            return @"Bye:\";
+            return @"Bye";
         }
     }
 }

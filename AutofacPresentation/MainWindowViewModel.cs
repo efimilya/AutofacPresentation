@@ -4,13 +4,13 @@
     {
         private readonly HeaderViewModel _headerViewModel;
 
-        public MainWindowViewModel(IShowChildWindowCommand showChildWindowCommand, HeaderViewModel headerViewModel)
+        public MainWindowViewModel(ShowChildWindowCommand showChildWindowCommand, HeaderViewModel headerViewModel)
         {
             _headerViewModel = headerViewModel;
             ShowChildWindowCommand = showChildWindowCommand;
         }
 
-        public IShowChildWindowCommand ShowChildWindowCommand { get; }
+        public ShowChildWindowCommand ShowChildWindowCommand { get; }
 
         public HeaderViewModel Header => _headerViewModel;
     }

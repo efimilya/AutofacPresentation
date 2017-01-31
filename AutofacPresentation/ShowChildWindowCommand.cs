@@ -1,12 +1,13 @@
 using System;
+using System.Windows.Input;
 
 namespace AutofacPresentation
 {
-    public class GoodShowChildWindowCommand : IShowChildWindowCommand
+    public class ShowChildWindowCommand : ICommand
     {
-        private readonly GoodChildWindowViewModelFactory _childWindowViewModelFactory;
+        private readonly ChildWindowViewModelFactory _childWindowViewModelFactory;
 
-        public GoodShowChildWindowCommand(GoodChildWindowViewModelFactory childWindowViewModelFactory)
+        public ShowChildWindowCommand(ChildWindowViewModelFactory childWindowViewModelFactory)
         {
             _childWindowViewModelFactory = childWindowViewModelFactory;
         }
