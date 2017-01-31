@@ -65,17 +65,19 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="BadCompositionRoot.cs" />
-    <Compile Include="BadShowChildWindowCommand.cs" />
     <Compile Include="ChildWindowView.xaml.cs">
       <DependentUpon>ChildWindowView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="HeaderTextFormatter.cs" />
+    <Compile Include="HeaderTextProvider.cs" />
     <Compile Include="HeaderView.xaml.cs">
       <DependentUpon>HeaderView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="HeaderViewModel.cs" />
-    <Compile Include="GoodShowChildWindowCommand.cs" />
+    <Compile Include="ChildHeaderViewModel.cs" />
+    <Compile Include="ShowChildWindowCommand.cs" />
     <Compile Include="HideSensitiveInfoFromHeader.cs" />
-    <Compile Include="IShowChildWindowCommand.cs" />
+    <Compile Include="IFormatHeaderStrategy.cs" />
+    <Compile Include="LeftSensitiveInfoInHeader.cs" />
     <Compile Include="SpeakerType.cs" />
     <Page Include="ChildWindowView.xaml">
       <SubType>Designer</SubType>

@@ -2,18 +2,18 @@
 {
     public class MainWindowViewModel
     {
-        public MainWindowViewModel(IShowChildWindowCommand showChildWindowCommand, IHeaderViewModel headerViewModel)
+        public MainWindowViewModel(ShowChildWindowCommand showChildWindowCommand, IHeaderViewModel headerViewModel)
         {
             Header = headerViewModel;
             ShowChildWindowCommand = showChildWindowCommand;
         }
 
-        public IShowChildWindowCommand ShowChildWindowCommand { get; }
+        public ShowChildWindowCommand ShowChildWindowCommand { get; }
 
         public IHeaderViewModel Header { get; }
     }
 
-    public class SimpleHeaderViewModel : IHeaderViewModel
+    public class MainHeaderViewModel : IHeaderViewModel
     {
         public string Text => "Простой заголовок";
     }

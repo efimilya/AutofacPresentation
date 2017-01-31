@@ -9,8 +9,8 @@ namespace AutofacPresentation
         {
             var builder = new ContainerBuilder();
             builder.RegisterType<MainWindowViewModel>().AsSelf();
-            builder.RegisterType<BadShowChildWindowCommand>().As<IShowChildWindowCommand>();
-            builder.RegisterType<SimpleHeaderViewModel>().As<IHeaderViewModel>().InstancePerDependency();
+            builder.RegisterType<ShowChildWindowCommand>().AsSelf();
+            builder.RegisterType<MainHeaderViewModel>().As<IHeaderViewModel>().InstancePerDependency();
             builder.RegisterType<GoodSpeaker>().AsSelf();
             builder.RegisterType<BadSpeaker>().AsSelf();
             builder.RegisterType<HideSensitiveInfoFromHeader>().AsSelf();
@@ -22,7 +22,7 @@ namespace AutofacPresentation
                 {
                     var parentContext = context.Persist();
                     return speaker => new ChildWindowViewModel(GetSpeaker(speaker, parentContext), 
-                        new HeaderViewModel(new HeaderTextFormatter(GetFormatHeaderStrategy(speaker, parentContext)), parentContext.Resolve<HeaderTextProvider>()));
+                        new ChildHeaderViewModel(new HeaderTextFormatter(GetFormatHeaderStrategy(speaker, parentContext)), parentContext.Resolve<HeaderTextProvider>()));
                 });
 
             return builder.Build().Resolve<MainWindowViewModel>();

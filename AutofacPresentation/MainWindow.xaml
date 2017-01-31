@@ -9,9 +9,9 @@
     <Grid>
         <local:HeaderView DataContext="{Binding Path=Header}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10"/>
         <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
-            <Button Content="Ask good" Command="{Binding Path=ShowChildWindowCommand}"
+            <Button Content="Say hello" Command="{Binding Path=ShowChildWindowCommand}"
                     CommandParameter="{x:Static local:SpeakerType.Good}" />
-            <Button Content="Ask bad" Command="{Binding Path=ShowChildWindowCommand}"
+            <Button Content="Say bye" Command="{Binding Path=ShowChildWindowCommand}"
                     CommandParameter="{x:Static local:SpeakerType.Bad}" />
         </StackPanel>
     </Grid>

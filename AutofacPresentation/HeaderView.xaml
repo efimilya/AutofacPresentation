@@ -5,6 +5,6 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:AutofacPresentation"
         mc:Ignorable="d"
-        d:DataContext="{d:DesignInstance local:HeaderViewModel}">
+        d:DataContext="{d:DesignInstance local:ChildHeaderViewModel}">
     <TextBlock Text="{Binding Path=Text}" />
 </UserControl>

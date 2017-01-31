@@ -10,8 +10,8 @@ namespace AutofacPresentation
         {
             var builder = new ContainerBuilder();
             builder.RegisterType<MainWindowViewModel>().AsSelf();
-            builder.RegisterType<GoodShowChildWindowCommand>().As<IShowChildWindowCommand>();
-            builder.RegisterType<SimpleHeaderViewModel>().As<IHeaderViewModel>();
+            builder.RegisterType<ShowChildWindowCommand>().AsSelf();
+            builder.RegisterType<MainHeaderViewModel>().As<IHeaderViewModel>();
 
             builder.Register<ChildWindowViewModelFactory>(context =>
             {
@@ -38,7 +38,7 @@ namespace AutofacPresentation
             builder.RegisterType(FormatStrategyRegistrationMap[speakerType]).As<IFormatHeaderStrategy>();
             builder.RegisterType<ChildWindowViewModel>().AsSelf();
             builder.RegisterType<HeaderTextFormatter>().AsSelf();
-            builder.RegisterType<HeaderViewModel>().As<IHeaderViewModel>();
+            builder.RegisterType<ChildHeaderViewModel>().As<IHeaderViewModel>();
             builder.RegisterType<HeaderTextProvider>().AsSelf();
         }
     }
