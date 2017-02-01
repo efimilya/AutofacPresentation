@@ -2,9 +2,16 @@
 {
     public class CustomerHandler
     {
-        public int Handle(Customer customer)
+        private readonly CalculateData _data;
+
+        public CustomerHandler(CalculateData data)
         {
-            return 1;
+            _data = data;
+        }
+
+        public int Handle()
+        {
+            return _data.Customer.Value;
         }
     }
 }

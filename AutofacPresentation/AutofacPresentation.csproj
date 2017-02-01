@@ -64,7 +64,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Backend\BadBackendCompositionRoot.cs" />
+    <Compile Include="Backend\BackendCompositionRoot.cs" />
+    <Compile Include="Backend\CalculateContext.cs" />
+    <Compile Include="Backend\CalculateData.cs" />
+    <Compile Include="Backend\CalculateDataLoader.cs" />
     <Compile Include="Backend\FirstStepAggregator.cs" />
     <Compile Include="Backend\Customer.cs" />
     <Compile Include="Backend\CustomerHandler.cs" />

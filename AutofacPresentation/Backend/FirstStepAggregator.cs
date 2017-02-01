@@ -18,11 +18,11 @@ namespace AutofacPresentation.Backend
             _globalServiceData = globalServiceData;
         }
 
-        public int Aggregate(Customer customer, Program program, Operation operation)
+        public int Aggregate()
         {
-            return (_customerHandler.Handle(customer) +
-                   _programHandler.Handle(program) +
-                   _operationHandler.Handle(operation)) * _globalServiceData.Value;
+            return (_customerHandler.Handle() +
+                   _programHandler.Handle() +
+                   _operationHandler.Handle()) * _globalServiceData.Value;
         }
     }
 }

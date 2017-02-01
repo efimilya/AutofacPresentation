@@ -2,5 +2,6 @@
 {
     public class Program
     {
+        public int Value = 4;
     }
 }

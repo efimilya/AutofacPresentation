@@ -20,7 +20,7 @@ namespace AutofacPresentation.Frontend
 
         private void ExecuteService(object obj)
         {
-            ServiceResult = BadBackendCompositionRoot.CreateService().Calculate(1, 1, "");
+            ServiceResult = BackendCompositionRoot.CreateService(1,1,"").Calculate();
             OnPropertyChanged(nameof(ServiceResult));
         }
 

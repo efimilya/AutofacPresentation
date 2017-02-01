@@ -2,9 +2,16 @@
 {
     public class ProgramHandler
     {
-        public int Handle(Program program)
+        private readonly CalculateData _data;
+
+        public ProgramHandler(CalculateData data)
         {
-            return 2;
+            _data = data;
+        }
+
+        public int Handle()
+        {
+            return _data.Program.Value;
         }
     }
 }

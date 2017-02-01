@@ -2,9 +2,16 @@
 {
     public class OperationHandler
     {
-        public int Handle(Operation operation)
+        private readonly CalculateData _data;
+
+        public OperationHandler(CalculateData data)
         {
-            return 3;
+            _data = data;
+        }
+
+        public int Handle()
+        {
+            return _data.Operation.Value;
         }
     }
 }

@@ -15,11 +15,11 @@ namespace AutofacPresentation.Backend
             _programHandler = programHandler;
         }
 
-        public int Aggregate(Customer customer, Program program, Operation operation)
+        public int Aggregate()
         {
-            return _customerHandler.Handle(customer)*2 +
-                   _programHandler.Handle(program)*2 +
-                   _operationHandler.Handle(operation)*2;
+            return _customerHandler.Handle()*2 +
+                   _programHandler.Handle()*2 +
+                   _operationHandler.Handle()*2;
         }
     }
 }
