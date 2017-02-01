@@ -64,26 +64,41 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="BadCompositionRoot.cs" />
-    <Compile Include="ChildWindowView.xaml.cs">
+    <Compile Include="Backend\BadBackendCompositionRoot.cs" />
+    <Compile Include="Backend\FirstStepAggregator.cs" />
+    <Compile Include="Backend\Customer.cs" />
+    <Compile Include="Backend\CustomerHandler.cs" />
+    <Compile Include="Backend\CustomerRepository.cs" />
+    <Compile Include="Backend\IService.cs" />
+    <Compile Include="Backend\Operation.cs" />
+    <Compile Include="Backend\OperationHandler.cs" />
+    <Compile Include="Backend\OperationRepository.cs" />
+    <Compile Include="Backend\GlobalServiceData.cs" />
+    <Compile Include="Backend\Program.cs" />
+    <Compile Include="Backend\ProgramHandler.cs" />
+    <Compile Include="Backend\ProgramRepository.cs" />
+    <Compile Include="Backend\SecondStepAggregator.cs" />
+    <Compile Include="Backend\Service.cs" />
+    <Compile Include="Frontend\BadCompositionRoot.cs" />
+    <Compile Include="Frontend\ChildWindowView.xaml.cs">
       <DependentUpon>ChildWindowView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="HeaderTextFormatter.cs" />
-    <Compile Include="HeaderTextProvider.cs" />
-    <Compile Include="HeaderView.xaml.cs">
+    <Compile Include="Frontend\HeaderTextFormatter.cs" />
+    <Compile Include="Frontend\HeaderTextProvider.cs" />
+    <Compile Include="Frontend\HeaderView.xaml.cs">
       <DependentUpon>HeaderView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="ChildHeaderViewModel.cs" />
-    <Compile Include="ShowChildWindowCommand.cs" />
-    <Compile Include="HideSensitiveInfoFromHeader.cs" />
-    <Compile Include="IFormatHeaderStrategy.cs" />
-    <Compile Include="LeftSensitiveInfoInHeader.cs" />
-    <Compile Include="SpeakerType.cs" />
-    <Page Include="ChildWindowView.xaml">
+    <Compile Include="Frontend\ChildHeaderViewModel.cs" />
+    <Compile Include="Frontend\RelayCommand.cs" />
+    <Compile Include="Frontend\HideSensitiveInfoFromHeader.cs" />
+    <Compile Include="Frontend\IFormatHeaderStrategy.cs" />
+    <Compile Include="Frontend\LeftSensitiveInfoInHeader.cs" />
+    <Compile Include="Frontend\SpeakerType.cs" />
+    <Page Include="Frontend\ChildWindowView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="HeaderView.xaml">
+    <Page Include="Frontend\HeaderView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -95,19 +110,20 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="BadSpeaker.cs" />
-    <Compile Include="ChildWindowViewModel.cs" />
-    <Compile Include="GoodCompositionRoot.cs" />
-    <Compile Include="GoodSpeaker.cs" />
-    <Compile Include="IoCExtensions.cs" />
-    <Compile Include="ISpeaker.cs" />
+    <Compile Include="Frontend\BadSpeaker.cs" />
+    <Compile Include="Frontend\ChildWindowViewModel.cs" />
+    <Compile Include="Frontend\GoodCompositionRoot.cs" />
+    <Compile Include="Frontend\GoodSpeaker.cs" />
+    <Compile Include="Frontend\IoCExtensions.cs" />
+    <Compile Include="Frontend\ISpeaker.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="MainWindowViewModel.cs" />
+    <Compile Include="Frontend\MainWindowViewModel.cs" />
+    <Compile Include="Properties\Annotations.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>

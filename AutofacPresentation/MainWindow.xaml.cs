@@ -1,4 +1,5 @@
 ﻿using System.Windows;
+using AutofacPresentation.Frontend;
 
 namespace AutofacPresentation
 {
