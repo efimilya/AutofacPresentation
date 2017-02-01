@@ -4,7 +4,8 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:AutofacPresentation"
+        xmlns:frontend="clr-namespace:AutofacPresentation.Frontend"
         mc:Ignorable="d"
-        d:DataContext="{d:DesignInstance local:ChildHeaderViewModel}">
+        d:DataContext="{d:DesignInstance frontend:ChildHeaderViewModel}">
     <TextBlock Text="{Binding Path=Text}" />
 </UserControl>
