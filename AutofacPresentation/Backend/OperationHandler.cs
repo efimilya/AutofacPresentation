@@ -4,7 +4,7 @@
     {
         public int Handle(Operation operation)
         {
-            return 3;
+            return operation.Value;
         }
     }
 }

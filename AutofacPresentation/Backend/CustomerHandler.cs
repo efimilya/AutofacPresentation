@@ -4,7 +4,7 @@
     {
         public int Handle(Customer customer)
         {
-            return 1;
+            return customer.Value;
         }
     }
 }

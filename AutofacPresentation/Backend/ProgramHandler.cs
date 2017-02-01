@@ -4,7 +4,7 @@
     {
         public int Handle(Program program)
         {
-            return 2;
+            return program.Value;
         }
     }
 }
