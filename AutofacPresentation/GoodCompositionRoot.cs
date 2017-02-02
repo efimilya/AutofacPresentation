@@ -16,7 +16,8 @@ namespace AutofacPresentation
             builder.Register<ChildWindowViewModelFactory>(context =>
             {
                 var parentContext = context.Persist();
-                return speakerType => parentContext.RegisterWithChildScope(childBuilder => RegisterChildWindowViewModel(childBuilder, speakerType), childScope => childScope.Resolve<ChildWindowViewModel>());
+                return speakerType => parentContext.RegisterWithChildScope(childBuilder => RegisterChildWindowViewModel(childBuilder, speakerType), 
+                    childScope => new Disposable<ChildWindowViewModel>(childScope.Resolve<ChildWindowViewModel>(), childScope.Dispose));
             });
 
             return builder.Build().Resolve<MainWindowViewModel>();

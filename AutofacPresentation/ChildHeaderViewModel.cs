@@ -1,6 +1,8 @@
-﻿namespace AutofacPresentation
+﻿using System;
+
+namespace AutofacPresentation
 {
-    public class ChildHeaderViewModel: IHeaderViewModel
+    public class ChildHeaderViewModel: IHeaderViewModel, IDisposable
     {
         public ChildHeaderViewModel(HeaderTextFormatter headerTextFormatter, HeaderTextProvider headerTextProvider)
         {
@@ -8,5 +10,9 @@
         }
 
         public string Text { get; }
+        public void Dispose()
+        {
+            
+        }
     }
 }

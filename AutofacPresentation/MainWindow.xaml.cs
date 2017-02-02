@@ -10,7 +10,7 @@ namespace AutofacPresentation
         public MainWindow()
         {
             InitializeComponent();
-            DataContext = BadCompositionRoot.CreateMainWindowViewModel();
+            DataContext = GoodCompositionRoot.CreateMainWindowViewModel();
         }
     }
 }

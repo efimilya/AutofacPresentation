@@ -64,10 +64,11 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="BadCompositionRoot.cs" />
     <Compile Include="ChildWindowView.xaml.cs">
       <DependentUpon>ChildWindowView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="CompositeDisposable.cs" />
+    <Compile Include="Disposable.cs" />
     <Compile Include="HeaderTextFormatter.cs" />
     <Compile Include="HeaderTextProvider.cs" />
     <Compile Include="HeaderView.xaml.cs">

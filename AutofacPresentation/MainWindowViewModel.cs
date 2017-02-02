@@ -1,4 +1,6 @@
-﻿namespace AutofacPresentation
+﻿using System;
+
+namespace AutofacPresentation
 {
     public class MainWindowViewModel
     {
@@ -11,6 +13,8 @@
         public ShowChildWindowCommand ShowChildWindowCommand { get; }
 
         public IHeaderViewModel Header { get; }
+
+        public event Action SomeAction;
     }
 
     public class MainHeaderViewModel : IHeaderViewModel

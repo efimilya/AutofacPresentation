@@ -19,7 +19,9 @@ namespace AutofacPresentation
 
         public void Execute(object parameter)
         {
-            new ChildWindowView {DataContext = _childWindowViewModelFactory((SpeakerType) parameter)}.ShowDialog();
+            var childWindowViewModel = _childWindowViewModelFactory((SpeakerType) parameter);
+            new ChildWindowView {DataContext = childWindowViewModel.Value}.ShowDialog();
+            childWindowViewModel.Dispose();
         }
 
         public event EventHandler CanExecuteChanged;
