@@ -86,6 +86,7 @@
     <Compile Include="Frontend\ChildWindowView.xaml.cs">
       <DependentUpon>ChildWindowView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Frontend\Divider.cs" />
     <Compile Include="Frontend\HeaderTextFormatter.cs" />
     <Compile Include="Frontend\HeaderTextProvider.cs" />
     <Compile Include="Frontend\HeaderView.xaml.cs">

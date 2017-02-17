@@ -14,7 +14,9 @@ namespace AutofacPresentation.Frontend
             builder.RegisterType<BadSpeaker>().AsSelf();
             builder.RegisterType<HideSensitiveInfoFromHeader>().AsSelf();
             builder.RegisterType<LeftSensitiveInfoInHeader>().AsSelf();
-            builder.RegisterType<HeaderTextProvider>().AsSelf();            
+            builder.RegisterType<HeaderTextProvider>().AsSelf();
+            builder.RegisterType<Divider>().AsSelf();
+            builder.RegisterType<DivideHelper>().AsSelf();
 
             builder.Register<ChildWindowViewModelFactory>(
                 context =>
