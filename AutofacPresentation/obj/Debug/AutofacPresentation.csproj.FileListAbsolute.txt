@@ -20,3 +20,4 @@ C:\AutofacPresentation\AutofacPresentation\obj\Debug\AutofacPresentation.exe
 C:\AutofacPresentation\AutofacPresentation\obj\Debug\AutofacPresentation.pdb
 C:\AutofacPresentation\AutofacPresentation\obj\Debug\MainWindow.g.cs
 C:\AutofacPresentation\AutofacPresentation\obj\Debug\MainWindow.baml
+C:\AutofacPresentation\AutofacPresentation\obj\Debug\AutofacPresentation.csprojResolveAssemblyReference.cache
