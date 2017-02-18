@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:autofacPresentation="clr-namespace:AutofacPresentation"
         mc:Ignorable="d"
-        Title="ChildWindowView" Height="300" Width="300" d:DataContext="{d:DesignInstance autofacPresentation:ChildWindowViewModel}">
+        Title="Autofac presentation" Height="300" Width="300" d:DataContext="{d:DesignInstance autofacPresentation:ChildWindowViewModel}">
     <Grid>
         <autofacPresentation:HeaderView DataContext="{Binding Path=Header}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10"/>
         <TextBlock Text="{Binding Path=Text}" HorizontalAlignment="Center" VerticalAlignment="Center" />
