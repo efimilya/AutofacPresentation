@@ -5,13 +5,15 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:AutofacPresentation"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525" d:DataContext="{d:DesignInstance local:MainWindowViewModel}">
+        Title="Autofac presentation" Height="350" Width="525" d:DataContext="{d:DesignInstance local:MainWindowViewModel}">
     <Grid>
         <local:HeaderView DataContext="{Binding Path=Header}" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="10"/>
-        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
-            <Button Content="Say hello" Command="{Binding Path=ShowChildWindowCommand}"
+        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Orientation="Horizontal">
+            <Button Content="Say Hello" Command="{Binding Path=ShowChildWindowCommand}"
+                    Margin="10"
                     CommandParameter="{x:Static local:SpeakerType.Good}" />
-            <Button Content="Say bye" Command="{Binding Path=ShowChildWindowCommand}"
+            <Button Content="Say Goodbye" Command="{Binding Path=ShowChildWindowCommand}"
+                    Margin="10"
                     CommandParameter="{x:Static local:SpeakerType.Bad}" />
         </StackPanel>
     </Grid>
