@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:AutofacPresentation"
         xmlns:frontend="clr-namespace:AutofacPresentation.Frontend"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525" d:DataContext="{d:DesignInstance frontend:MainWindowViewModel}">
+        Title="Autofac presentation" Height="350" Width="525" d:DataContext="{d:DesignInstance frontend:MainWindowViewModel}">
     <Grid>
         <frontend:HeaderView DataContext="{Binding Path=Header}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10"/>
         <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Orientation="Horizontal">
