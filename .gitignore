@@ -1,0 +1,6 @@
+*.exe
+*.suo
+*.pdb
+*.dll
+AutofacPresentation/obj
+AutofacPresentation/bin
